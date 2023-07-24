@@ -42,17 +42,17 @@
                     </div>
                 </div>
                 <div class="col-8 border">
-                    <nav class="navbar bg-body-tertiary my-1" v-for="contatto in contatti">
+                    <nav class="navbar bg-body-tertiary my-1">
                         <div class="container-fluid">
                             <span class="navbar-text">
-                                <img class="img-avatar" :src="'img/avatar' + contatto.avatar + '.jpg'" alt="">
-                                {{contatto.name}}
+                                <img class="img-avatar" :src="'img/avatar' + contatti[activeContactIndex].avatar + '.jpg'" alt="">
+                                {{contatti[activeContactIndex].name}}
                             </span>
                         </div>
                     </nav>
                     <div class="container background">
-                        <div class="row received" v-for="contatto in contatti">
-                            <div class="text-box">{{contatto.messages}}</div>
+                        <div class="row received" v-for="message in contatti[activeContactIndex].messages">
+                            <div class="text-box">{{message.message}}</div>
                         </div>
                     </div>
                     <div class="input-group py-1">
