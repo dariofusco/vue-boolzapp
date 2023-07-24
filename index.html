@@ -34,8 +34,8 @@
                         <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
                             aria-label="Cerca o inizia una nuova chat" aria-describedby="addon-wrapping">
                     </div>
-                    <div class="list-group py-1" v-for="contatto in contatti">
-                        <a href="#" class="list-group-item list-group-item-action" aria-current="true" @click="onContactClick(contatto)">
+                    <div class="list-group py-1" v-for="(contatto, i) in contatti">
+                        <a href="#" class="list-group-item list-group-item-action" aria-current="true" @click="onContactClick(i)">
                             <img class="img-avatar" :src="'img/avatar' + contatto.avatar + '.jpg'" alt="avatar_1">
                             {{contatto.name}}
                         </a>
@@ -50,7 +50,7 @@
                             </span>
                         </div>
                     </nav>
-                    <div class="container background" >
+                    <div class="container background">
                         <div class="row received" v-for="contatto in contatti">
                             <div class="text-box">{{contatto.messages}}</div>
                         </div>
