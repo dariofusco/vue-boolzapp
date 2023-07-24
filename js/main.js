@@ -1,6 +1,7 @@
 const app = Vue.createApp({
   data() {
     return {
+      activeContactIndex: 0,
       contatti: [
         {
           name: "Michele",
@@ -85,7 +86,10 @@ const app = Vue.createApp({
     }
   },
   methods: {
-
+    onContactClick(contactIndex) {
+      console.log(contactIndex);
+      this.activeContactIndex = contactIndex;
+    }
   }
 });
 

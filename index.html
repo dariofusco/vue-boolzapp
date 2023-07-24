@@ -35,24 +35,24 @@
                             aria-label="Cerca o inizia una nuova chat" aria-describedby="addon-wrapping">
                     </div>
                     <div class="list-group py-1" v-for="contatto in contatti">
-                        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-                            <img class="img-avatar" :src="'img/avatar'+ contatto.avatar + '.jpg'" alt="avatar_1">
+                        <a href="#" class="list-group-item list-group-item-action" aria-current="true" @click="onContactClick(contatto)">
+                            <img class="img-avatar" :src="'img/avatar' + contatto.avatar + '.jpg'" alt="avatar_1">
                             {{contatto.name}}
                         </a>
                     </div>
                 </div>
                 <div class="col-8 border">
-                    <nav class="navbar bg-body-tertiary my-1">
+                    <nav class="navbar bg-body-tertiary my-1" v-for="contatto in contatti">
                         <div class="container-fluid">
                             <span class="navbar-text">
-                                <img class="img-avatar" src="img/avatar_1.jpg" alt="avatar_1">
-                                Michele
+                                <img class="img-avatar" :src="'img/avatar' + contatto.avatar + '.jpg'" alt="">
+                                {{contatto.name}}
                             </span>
                         </div>
                     </nav>
-                    <div class="container background">
-                        <div class="row received">
-                            <div class="text-box">Hai portato a spasso il cane?</div>
+                    <div class="container background" >
+                        <div class="row received" v-for="contatto in contatti">
+                            <div class="text-box">{{contatto.messages}}</div>
                         </div>
                     </div>
                     <div class="input-group py-1">
