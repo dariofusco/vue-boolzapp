@@ -10,15 +10,21 @@
     background-color: rgb(108, 233, 108);
     display: flex;
     align-items: center;
+    margin-bottom: 5px;
 }
 
-.received {
+.sent {
 justify-content: end;
+}
+
+.received .text-box {
+    background-color: white;
 }
 
 .background {
     background-image: url(../img/mine.jpg);
     width: 100%;
-    min-height: 400px;
+    min-height: 500px;
     padding: 30px;
+    border-radius: 10px;
 }
