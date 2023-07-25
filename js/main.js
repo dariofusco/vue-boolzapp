@@ -96,11 +96,16 @@ const app = Vue.createApp({
       this.activeContactIndex = contactIndex;
     },
     addNewMessage(activeContactIndex) {
-      const messageClone = {...this.messages};
+      const messageClone = { ...this.messages };
       this.contatti[activeContactIndex].messages.push(messageClone);
       this.messages.message = "";
+      const answer = { date: "", message: "ok", status: "received" };
+      this.interval = setInterval(() => {
+        this.contatti[activeContactIndex].messages.push(answer);
+        clearInterval(this.interval)
+      }, 1000);
     },
-  }
+  },
 });
 
 app.mount("#app");
