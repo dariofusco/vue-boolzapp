@@ -3,7 +3,7 @@ const app = Vue.createApp({
     return {
       activeContactIndex: 0,
       messages: {
-        date: "",
+        date: new Date().toLocaleString(),
         message: "",
         status: "sent",
       },
@@ -99,10 +99,10 @@ const app = Vue.createApp({
       const messageClone = { ...this.messages };
       this.contatti[activeContactIndex].messages.push(messageClone);
       this.messages.message = "";
-      const answer = { date: "", message: "ok", status: "received" };
+      const answer = { date: new Date().toLocaleString(), message: "ok", status: "received" };
       this.interval = setInterval(() => {
         this.contatti[activeContactIndex].messages.push(answer);
-        clearInterval(this.interval)
+        clearInterval(this.interval);
       }, 1000);
     },
   },
