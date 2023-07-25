@@ -14,7 +14,8 @@
 }
 
 .sent {
-justify-content: end;
+    justify-content: end;
+
 }
 
 .received .text-box {

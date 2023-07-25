@@ -58,7 +58,7 @@
                     </div>
                     <div class="input-group py-2">
                         <span class="input-group-text"><i class="fa-regular fa-face-smile"></i></span>
-                        <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                        <input type="text" class="form-control" placeholder="Scrivi un messaggio" v-model="messages.message" @keydown.enter="addNewMessage(activeContactIndex)">
                         <span class="input-group-text"><i class="fa-solid fa-microphone"></i></span>
                     </div>
                 </div>

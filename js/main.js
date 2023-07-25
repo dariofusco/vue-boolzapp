@@ -2,6 +2,11 @@ const app = Vue.createApp({
   data() {
     return {
       activeContactIndex: 0,
+      messages: {
+        date: "",
+        message: "",
+        status: "sent",
+      },
       contatti: [
         {
           name: "Michele",
@@ -83,13 +88,18 @@ const app = Vue.createApp({
           ],
         },
       ],
-    }
+    };
   },
   methods: {
     onContactClick(contactIndex) {
       console.log(contactIndex);
       this.activeContactIndex = contactIndex;
-    }
+    },
+    addNewMessage(activeContactIndex) {
+      const messageClone = {...this.messages};
+      this.contatti[activeContactIndex].messages.push(messageClone);
+      this.messages.message = "";
+    },
   }
 });
 
