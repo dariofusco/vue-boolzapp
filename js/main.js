@@ -1,6 +1,7 @@
 const app = Vue.createApp({
   data() {
     return {
+      search: "",
       activeContactIndex: 0,
       messages: {
         date: new Date().toLocaleString(),
@@ -104,6 +105,13 @@ const app = Vue.createApp({
         this.contatti[activeContactIndex].messages.push(answer);
         clearInterval(this.interval);
       }, 1000);
+    },
+  },
+  computed: {
+    filteredContacts() {
+      return this.contatti.filter(contatti => {
+        return contatti.name.toLowerCase().indexOf(this.search.toLowerCase()) != -1;
+      });
     },
   },
 });
