@@ -2,6 +2,7 @@ const app = Vue.createApp({
   data() {
     return {
       search: "",
+      //Imposto l'indice iniziale del contatto attivo
       activeContactIndex: 0,
       messages: {
         date: new Date().toLocaleString(),
@@ -92,14 +93,17 @@ const app = Vue.createApp({
     };
   },
   methods: {
+    //Funzione per rilevare al click l'indice del contatto attivo 
     onContactClick(contactIndex) {
       console.log(contactIndex);
       this.activeContactIndex = contactIndex;
     },
+    //Funzione per pushare una copia del nuovo messaggio nell'array del contatto attivo
     addNewMessage(activeContactIndex) {
       const messageClone = { ...this.messages };
       this.contatti[activeContactIndex].messages.push(messageClone);
       this.messages.message = "";
+      //Imposto in timer per inviare una risposta dopo 1sec
       const answer = { date: new Date().toLocaleString(), message: "ok", status: "received" };
       this.interval = setInterval(() => {
         this.contatti[activeContactIndex].messages.push(answer);
@@ -108,6 +112,7 @@ const app = Vue.createApp({
     },
   },
   computed: {
+    //Funzione per filtrare l'elenco contatti
     filteredContacts() {
       return this.contatti.filter(contatti => {
         return contatti.name.toLowerCase().indexOf(this.search.toLowerCase()) != -1;
