@@ -14,10 +14,10 @@
     <title>Boolzapp</title>
 </head>
 
-<body class="bg-success">
+<body class="bg-success vh-100">
 
     <div id="app">
-        <h1 class="text-center text-light py-2">Boolzapp</h1>
+        <h1 class="text-center text-light py-3">Boolzapp</h1>
         <div class="container py-5">
             <div class="row">
                 <div class="col-4 border bg-light">
@@ -28,15 +28,15 @@
                                 Sofia
                             </span>
                             <span class="text-secondary">
-                                <i class="fa-solid fa-circle-notch p-2"></i>
-                                <i class="fa-solid fa-message p-2"></i>
-                                <i class="fa-solid fa-ellipsis-vertical p-2"></i>
+                                <i class="fa-solid fa-circle-notch p-1"></i>
+                                <i class="fa-solid fa-message p-1"></i>
+                                <i class="fa-solid fa-ellipsis-vertical p-1"></i>
                             </span>
                         </div>
                     </nav>
-                    <div class="input-group flex-nowrap py-1">
+                    <div class="input-group flex-nowrap py-2">
                         <span class="input-group-text" id="addon-wrapping"><i
-                                class="fa-solid fa-magnifying-glass"></i></span>
+                                class="fa-solid fa-magnifying-glass text-secondary"></i></span>
                         <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
                             aria-label="Cerca o inizia una nuova chat" aria-describedby="addon-wrapping"
                             v-model="search">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="col-8 border bg-light">
-                    <nav class="navbar bg-body-tertiary my-1">
+                    <nav class="navbar bg-body-tertiary my-2">
                         <div class="container-fluid">
                             <span class="navbar-text">
                                 <img class="img-avatar"
@@ -70,11 +70,11 @@
                             <div class="text-box">{{messageObj.message}}</div>
                         </div>
                     </div>
-                    <div class="input-group py-2">
-                        <span class="input-group-text"><i class="fa-regular fa-face-smile"></i></span>
+                    <div class="input-group py-3">
+                        <span class="input-group-text"><i class="fa-regular fa-face-smile text-secondary"></i></span>
                         <input type="text" class="form-control" placeholder="Scrivi un messaggio"
                             v-model="messages.message" @keydown.enter="addNewMessage(activeContactIndex)">
-                        <span class="input-group-text"><i class="fa-solid fa-microphone"></i></span>
+                        <span class="input-group-text"><i class="fa-solid fa-microphone text-secondary"></i></span>
                     </div>
                 </div>
             </div>

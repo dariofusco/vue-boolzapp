@@ -4,10 +4,10 @@
 }
 
 .text-box {
-    height: 50px;
-    width: 250px;
+    min-height: 50px;
+    max-width: 250px;
     border-radius: 10px;
-    background-color: rgb(108, 233, 108);
+    background-color: rgba(16, 227, 114, 1);
     display: flex;
     align-items: center;
     margin-bottom: 5px;
@@ -15,7 +15,6 @@
 
 .sent {
     justify-content: end;
-
 }
 
 .received .text-box {
@@ -28,4 +27,8 @@
     min-height: 500px;
     padding: 30px;
     border-radius: 10px;
+}
+
+.bg-success {
+    background: linear-gradient(180deg, rgba(16, 227, 114, 1) 0%, rgba(15, 208, 115, 1) 0%, rgba(238, 232, 171, 1) 21%, rgba(234, 224, 110, 1) 100%, rgba(202, 255, 0, 1) 100%);
 }
