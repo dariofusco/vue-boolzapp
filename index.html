@@ -44,7 +44,7 @@
                     </div>
                     <div class="list-group py-1" v-for="(contatto, i) in filteredContacts">
                         <a href="#0" class="list-group-item list-group-item-action" aria-current="true"
-                            @click="onContactClick(i)">
+                            @click="onContactClick(contatto)">
                             <img class="img-avatar" :src="'img/avatar' + contatto.avatar + '.jpg'" alt="avatar_1">
                             {{contatto.name}}
                         </a>
@@ -56,8 +56,8 @@
                         <div class="container-fluid">
                             <span class="navbar-text">
                                 <img class="img-avatar"
-                                    :src="'img/avatar' + filteredContacts[activeContactIndex].avatar + '.jpg'" alt="">
-                                {{filteredContacts[activeContactIndex].name}}
+                                    :src="'img/avatar' + activeContact.avatar + '.jpg'" alt="">
+                                {{activeContact.name}}
                             </span>
                             <span class="text-secondary">
                                 <i class="fa-solid fa-magnifying-glass p-2"></i>
@@ -67,7 +67,7 @@
                         </div>
                     </nav>
                     <div class="container background">
-                        <div class="row" v-for="messageObj in filteredContacts[activeContactIndex].messages"
+                        <div class="row" v-for="messageObj in activeContact.messages"
                             :class="messageObj.status">
                             <div class="text-box">{{messageObj.message}}</div>
                         </div>
@@ -75,7 +75,7 @@
                     <div class="input-group py-3">
                         <span class="input-group-text"><i class="fa-regular fa-face-smile text-secondary"></i></span>
                         <input type="text" class="form-control" placeholder="Scrivi un messaggio"
-                            v-model="messages.message" @keydown.enter="addNewMessage(activeContactIndex)">
+                            v-model="messages.message" @keydown.enter="addNewMessage(activeContact)">
                         <span class="input-group-text"><i class="fa-solid fa-microphone text-secondary"></i></span>
                     </div>
                 </div>
